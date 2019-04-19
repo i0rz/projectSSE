@@ -12,3 +12,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
 ]
 urlpatterns += staticfiles_urlpatterns()
+
+#Access login page here: http://localhost:8000/accounts/login/
