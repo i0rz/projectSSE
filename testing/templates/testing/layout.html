@@ -16,6 +16,11 @@
 </div>
 
 <div class="body-content">
+    {% if user.is_authenticated %}
+<a href="{% url 'logout' %}">logout</a>
+{% else %}
+<a href="{% url 'login' %}">login</a>
+{% endif %}
     {% block content %}
     {% endblock %}
     <hr/>
@@ -25,5 +30,3 @@
 </div>
 </body>
 </html>
-
-
