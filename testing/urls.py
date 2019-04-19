@@ -16,7 +16,7 @@ urlpatterns = [
     path("contact/",views.contact, name="contact"),
     path("testing/<name>", views.hello_there, name="hello_there"),
     path("log/", views.log_message, name="log"),
-
+    path("admin/", admin.site.urls),
     #first arg is a route "hello/" that accepts a variable string called name,
     #the string is passed to the views.hello_there
 ]

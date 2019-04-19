@@ -3,6 +3,10 @@ from django.http import HttpResponse
 from .forms import LogMessageForm
 from .models import LogMessage
 from django.views.generic import ListView
+from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
+from django.shortcuts import render, redirect
 import re
 
 from datetime import datetime
@@ -43,6 +47,8 @@ def hello_there(request, name):
             'date': datetime.now()
         }
     )
+
+
     # now = datetime.now()
     # formatted_now = now.strftime("%A, %d %B, %Y at %X")
 
