@@ -1,0 +1,14 @@
+<!--admin url is http://localhost:8000/admin/-->
+{% extends "testing/layout.html" %}
+{% block title %}
+    Home
+{% endblock %}
+{% block content %}
+    <h1>Profile Page</h1>
+    {% if user.is_authenticated %}
+    Hi {{ user.username }}!
+    <p> your private email is: {{user.email}}</p>
+    {% else %}
+    This should never be seen
+    {% endif %}
+{% endblock %}

@@ -71,3 +71,15 @@ class SignUp(generic.CreateView):
     # # content = "Hello there, " + clean_name + "! It's " + formatted_now
     # content = "<h1>Hello there, " + clean_name + "! It's "+formatted_now+"</h1>"
     # return HttpResponse(content)
+
+def profile_page(request):
+    """Profile page to show logged in user's info"""
+    context= {
+        "user": request.user,
+    }
+
+    if not request.user.is_authenticated:
+        return redirect("/accounts/login")
+
+
+    return render(request, "testing/profile_page.html", context)
