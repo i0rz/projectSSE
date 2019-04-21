@@ -8,6 +8,7 @@ pylint = "*"
 
 [packages]
 django = "==2.1.8"
+django-debug-toolbar = "==1.11"
 
 [requires]
 python_version = "3"
